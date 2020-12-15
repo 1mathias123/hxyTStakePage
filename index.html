@@ -214,10 +214,10 @@
     $(document).ready(function() {
       const config_json = {
         HXYT: {
-          tokenAddress: 'TXhv2baQ2q3TWerrwBiXjj27js9QocJFU9',
-          stakeDataAddress: 'TVMUd5yT9ZgxfCKm9dvKG3jmFAXYsMvyon',
-          stakeHandlerAddress: 'TD1sKYdUHKnR1V3UeVXxUB7QbD1mHTMkJG',
-          decimals: 1e6,
+          tokenAddress: 'TVAAQyNZ5Dj8nfTAJnhW5KxCvLZ5oSMFFy',
+          stakeDataAddress: 'TRHCUSnSb4wmQG1teB5CdEjBo2Htjr8dJq',
+          stakeHandlerAddress: 'TSVohFTYkYmtHTZFvLZJjTWbXyuvTuxMCp',
+          decimals: 1e8,
         }
       }
 
@@ -275,7 +275,7 @@
         if(!tronWeb.defaultAddress.base58) return
         let bal = await tronWeb.contract().at('TXhv2baQ2q3TWerrwBiXjj27js9QocJFU9')
         bal = await bal.balanceOf(tronWeb.defaultAddress.base58).call()
-        const addy = tronWeb.defaultAddress.base58.slice(0,5) +'... '+ abbreviateNumber(parseInt(bal._hex,16)/1e6) + ' DMD'
+        const addy = tronWeb.defaultAddress.base58.slice(0,5) +'... '+ abbreviateNumber(parseInt(bal._hex,16)/1e8) + ' HXYT'
         document.getElementById('user_addy').innerHTML = addy
       }
 
